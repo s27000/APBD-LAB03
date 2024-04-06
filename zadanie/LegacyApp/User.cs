@@ -11,5 +11,20 @@ namespace LegacyApp
         public string LastName { get; internal set; }
         public bool HasCreditLimit { get; internal set; }
         public int CreditLimit { get; internal set; }
+
+        public User(object client, DateTime dateOfBirth, string emailAdress, string firstName, string lastName)
+        {
+            try
+            {
+                DataVerifier.verifyData(firstName, lastName, emailAdress);
+            }catch (InvalidDataException e){
+                throw e;
+            }
+            Client = client;
+            DateOfBirth = dateOfBirth;
+            EmailAddress = emailAdress;
+            FirstName = firstName;
+            LastName = lastName;
+        }
     }
 }
