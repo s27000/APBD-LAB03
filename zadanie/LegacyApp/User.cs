@@ -16,7 +16,7 @@ namespace LegacyApp
         {
             try
             {
-                DataVerifier.verifyData(firstName, lastName, emailAdress);
+                DataVerifier.VerifyData(firstName, lastName, emailAdress);
             }catch (InvalidDataException e){
                 throw e;
             }
